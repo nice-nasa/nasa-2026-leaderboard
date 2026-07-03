@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="300">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eatcowsheep (nasa-05) Dashboard</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 32px; color: #17202a; background: #f7f8fb; }
+    h1, h2 { color: #111827; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .metric { background: #f3f4f6; border-radius: 12px; padding: 14px; }
+    .metric .label { color: #6b7280; font-size: 13px; }
+    .metric .value { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    table { border-collapse: collapse; width: 100%; background: white; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 9px 10px; text-align: left; font-size: 14px; vertical-align: top; }
+    th { background: #f9fafb; color: #374151; }
+    .muted { color: #6b7280; }
+    .ok { color: #047857; font-weight: 700; }
+    .bad { color: #b91c1c; font-weight: 700; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<h1>eatcowsheep 대시보드</h1>
+<p class="muted">TEAM_ID: <code>nasa-05</code> / 5~10분마다 자동 새로고침됩니다.</p>
+
+<div class="card metrics">
+  <div class="metric"><div class="label">오늘 정상 제출 횟수</div><div class="value">0 / 5</div></div>
+  <div class="metric"><div class="label">내 최고 SCORE</div><div class="value"></div></div>
+  <div class="metric"><div class="label">Best Macro AP</div><div class="value"></div></div>
+  <div class="metric"><div class="label">Best Macro F1</div><div class="value"></div></div>
+</div>
+
+<div class="card">
+  <h2>오늘 제출 상태</h2>
+  <p>오늘 제출 없음</p>
+  <p class="muted"></p>
+  <p class="bad"></p>
+</div>
+
+<div class="card">
+  <h2>최근 제출 상태 (마지막 제출 상태)</h2>
+  <p>제출 없음</p>
+  <p class="muted"></p>
+  <p class="bad"></p>
+</div>
+
+<div class="card">
+  <h2>최고 SCORE 해당 파일의 영역별 결과</h2>
+  <p class='muted'>아직 정상 채점된 제출이 없습니다.</p>
+  
+</div>
+
+<div class="card">
+  <h2>타겟별 최고 SCORE</h2>
+  <p class="muted">각 타겟별로 가장 높은 점수가 나온 제출 파일입니다. 전체 최고 SCORE에 해당하는 제출파일과 다를 수 있습니다.</p>
+  <p class='muted'>아직 정상 채점된 제출이 없습니다.</p>
+</div>
+
+<div class="card">
+  <h2>제출 이력</h2>
+  <p class='muted'>데이터가 없습니다.</p>
+</div>
+
+<div class="card">
+  <h2>제출 파일 형식 안내</h2>
+  <p>CSV 컬럼은 <code>ID</code> 다음에 target별 <code>{target}_SCORE</code>, <code>{target}_Target</code> 순서여야 합니다.</p>
+  <p>SCORE는 0~1000 범위의 정수, Target은 0 또는 1입니다. 대시보드 SCORE는 1000점 만점 환산 기준으로 표시됩니다.</p>
+  <p class="muted">오늘 정상 제출 횟수는 한국시간 기준 당일 정상 제출 건만 집계합니다. 최근 제출 상태는 날짜와 관계없이 가장 최근 처리된 제출 상태입니다.</p>
+</div>
+
+</body>
+</html>

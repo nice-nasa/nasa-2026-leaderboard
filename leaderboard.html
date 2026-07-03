@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="300">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 32px; color: #17202a; background: #f7f8fb; }
+    h1, h2 { color: #111827; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .metric { background: #f3f4f6; border-radius: 12px; padding: 14px; }
+    .metric .label { color: #6b7280; font-size: 13px; }
+    .metric .value { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    table { border-collapse: collapse; width: 100%; background: white; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 9px 10px; text-align: left; font-size: 14px; vertical-align: top; }
+    th { background: #f9fafb; color: #374151; }
+    .muted { color: #6b7280; }
+    .ok { color: #047857; font-weight: 700; }
+    .bad { color: #b91c1c; font-weight: 700; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<h1>NASA Challenge 2026 리더보드</h1>
+<p class="muted">5~10분마다 제출 파일을 체크하여 대시보드가 자동으로 수정됩니다. 변동사항이 없는 경우 좌측 상단의 새로고침을 누르시거나, html 파일을 닫고 다시 열어주시면 됩니다. </p>
+
+<div class="card metrics">
+  <div class="metric"><div class="label">참가 팀 수</div><div class="value">25</div></div>
+  <div class="metric"><div class="label">누적 정상 제출 수</div><div class="value">1</div></div>
+  <div class="metric"><div class="label">최고 SCORE</div><div class="value">86.63</div></div>
+  <div class="metric"><div class="label">기준일</div><div class="value">2026-07-03</div></div>
+</div>
+
+<div class="card">
+  <h2>순위표</h2>
+  <table><thead><tr><th>순위</th><th>팀명</th><th>SCORE</th><th>Macro AP</th><th>Macro F1</th><th>제출일시</th></tr></thead><tbody><tr><td>🥇 1</td><td>테스트팀</td><td>86.63</td><td>0.066957</td><td>0.116141</td><td>2026-07-02 17:18:27 KST</td></tr></tbody></table>
+</div>
+
+<div class="card">
+  <h2>채점 기준</h2>
+  <p><code>Final Score = 0.6 × Macro AP + 0.4 × Macro F1</code></p>
+  <p>정상 제출은 한국시간 기준 하루 최대 5회까지 채점됩니다.(자정 기준 제출 제한 초기화) 오류 제출은 정상 제출 횟수에 포함되지 않습니다.</p>
+
+  <h2>주의사항</h2>
+  <ul>
+    <li>SCORE는 1000점 만점 환산 점수이며, 실제 채점은 target별 AP와 F1을 기준으로 계산됩니다.</li>
+    <li>리더보드는 각 팀의 정상 채점 제출 중 가장 높은 Score 1건만 반영합니다. 즉, 추가 제출을 하더라도 기존보다 결과가 좋지 않다면 본 리더보드에 업데이트 되지 않습니다.</li>
+    <li>파일이 이미 정상 채점되어 반영된 경우, 이후 팀에서 동일한 파일을 제출하면 중복 제출로 처리되어 채점되지 않습니다.</li>
+    <li>단, 하루 제출 제한에 걸린 파일은 채점에 반영되지 않으며, 다음 날 동일한 파일을 다시 올리시는 경우에도 채점이 이루어집니다.</li>    
+  </ul>
+
+
+</div>
+
+</body>
+</html>
